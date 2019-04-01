@@ -1,8 +1,5 @@
 .card {
-    transition: 0.3s;
-    /*width: 10%;
-    margin: 2px;
-    background-color: #ffffff; */
+    transition: 1s ease all;
     display: inline-block;
     background: #fff;
     margin: 0.5em;
@@ -12,12 +9,33 @@
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     height: 195px;
+    -webkit-animation: fadein 1s forwards;
+    -moz-animation: fadein 1s forwards;
+    -ms-animation: fadein 1s forwards;
+    -o-animation: fadein 1s forwards;
+    animation: fadein 1s forwards;
 } 
-.card img{max-width:100%; height: 150px;;}
-
-/* .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-} */
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+.card img{max-width:100%; height: 150px;}
 
 .container {
     padding: 5px;
@@ -27,4 +45,54 @@
     padding: 0px;
     margin: 0px;
     display: flex;
+}
+.card-details {
+    transition: 1s ease all;
+    display: block;
+    background: #fff;
+    margin: 0.5em;
+    width: 229px;
+	-webkit-transition:1s ease all;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    height: 338px;
+    position: absolute;
+    border: 2px solid rgb(37, 37, 37);
+    z-index: 10;
+    -webkit-animation: fadein 0.5s forwards;
+    -moz-animation: fadein 0.5s forwards;
+    -ms-animation: fadein 0.5s forwards;
+    -o-animation: fadein 0.5s forwards;
+    animation: fadein 0.5s forwards;
+}
+.card-details img{max-width:100%; height: 225px;}
+
+.details-container {
+    padding: 5px;
+    padding-top: 0px;
+}
+.details-container p, .details-footer p{
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+}
+.details-container p:nth-child(2) {
+    text-decoration: line-through;
+    color: darkgray;
+}
+.details-container p:nth-child(4) {
+    color: green;
+}
+.details-footer{
+    height: 30px;
+    background-color: rgb(37, 37, 37);
+    color: #fff;
+    line-height: 2;
+}
+.details-footer p{
+    background: url("https://i.ibb.co/RHZ79YN/arrow-right.png") right center no-repeat;
+    background-size: 10%;
+    padding: 2px;
+    padding-left: 4px;
 }

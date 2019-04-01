@@ -11,7 +11,10 @@ export const StringConstants = {
     WOMEN: "Women",
     KIDS: "Kids",
     TEEN: "Teen",
-    SET_PRICE: "SET PRICE"
+    SET_PRICE: "SET PRICE",
+    SEE_MORE: "See more",
+    APPAREL: "Apparel"
+
 }
 
 export const DropDownStrings = {
@@ -19,10 +22,19 @@ export const DropDownStrings = {
 }
 
 export const JsonKeys = {
-    TYPE: 'type',
     ALL: "all",
     MEN: "men",
     WOMEN: "women",
     KIDS: "kids",
     TEEN: "teen",
+    ID: "id",
+    NAME: "name",
+    ACTUAL_PRICE: "actualPrice",
+    DISCOUNT_PRICE: "discountPrice",
+    TYPE: 'type',
+    MARCHANT: "marchant",
+    BRAND: "brand",
+    CATEGORY: "category",
+    PRODUCT_IMAGE: "ProductImage",
+    LINK: "link"
 }

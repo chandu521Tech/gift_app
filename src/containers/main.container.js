@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
+import { get, isNull } from 'lodash';
 import { saveToStoreAction } from '../redux/actions';
 import './main.css'
 import { StringConstants, JsonKeys } from '../utils/constants';
@@ -29,7 +30,7 @@ export default class Main extends Component {
                 let filterData = [];
                 this.state.Productscard.filter((item) => {
                     if (this.state.category !== null) {
-                        if (item.category === this.state.category) {
+                        if (get(item, JsonKeys.CATEGORY) === this.state.category) {
                             filterData.push(item);
                         }
                     }
@@ -47,7 +48,7 @@ export default class Main extends Component {
                 let TypeFilter = [];
                 this.state.Productscard.filter((item) => {
                     if (this.state.type !== null) {
-                        if (item.type === this.state.type) {
+                        if (get(item, JsonKeys.TYPE) === this.state.type) {
                             TypeFilter.push(item);
                         }
                     }
@@ -63,7 +64,7 @@ export default class Main extends Component {
         this.setState({ Productscard: cardData, range: range }, () => {
             let RangeFilter = [];
             this.state.Productscard.filter((item) => {
-                if (item.discountPrice <= this.state.range) {
+                if (get(item, JsonKeys.DISCOUNT_PRICE) <= this.state.range) {
                     RangeFilter.push(item);
                 }
             });
@@ -72,11 +73,11 @@ export default class Main extends Component {
         this.ApplyAllTypeFilter();
     }
     ApplyAllTypeFilter = () => {
-        if (this.state.category !== null && this.state.type !== null) {
+        if (!isNull(this.state.category) && !isNull(this.state.type)) {
             this.setState({ Productscard: cardData }, () => {
                 let filterData = [];
                 this.state.Productscard.filter((item) => {
-                    if (item.category === this.state.category && item.type === this.state.type && item.discountPrice <= this.state.range) {
+                    if (get(item, JsonKeys.CATEGORY) === this.state.category && get(item, JsonKeys.TYPE) === this.state.type && get(item, JsonKeys.DISCOUNT_PRICE) <= this.state.range) {
                         filterData.push(item);
                     }
                 });

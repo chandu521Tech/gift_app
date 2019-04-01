@@ -11,8 +11,6 @@ export default class GenderType extends Component{
     }
     typeFilter = (e, type) => {
         if(this.state.type != type || this.state.type == null){
-            // e.currentTarget.children[0].classList.toggle('active');
-            // e.currentTarget.children[1].classList.toggle('active');
             let elements = document.querySelectorAll('.icon-item span')
             for (let i = 0; i < elements.length; i++) {
                 elements[i].classList.remove('active')

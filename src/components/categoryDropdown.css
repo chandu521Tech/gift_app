@@ -1,0 +1,30 @@
+.category-drop-down {
+    margin-left: 5%;
+    margin-top: 1%;
+}
+.category-drop-down p{
+    margin: 0px;
+    font-size: 12px;
+    text-align: center;
+}
+.select_box { 
+    display: block;
+    padding: 10px 30px 10px 13px !important; 
+    max-width: 100%; 
+    height: auto !important; 
+    background: url("../images/arrow_down.png") right center no-repeat; 
+    background-size: 15%;
+    color: #444444; 
+    font-size: 14px; 
+    line-height: 16px !important; 
+    appearance: none; 
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+    border: none;
+} 
+.select_box option { 
+    padding: 0 4px; 
+} 
+.select_box::-ms-expand { 
+    display: none; 
+} 

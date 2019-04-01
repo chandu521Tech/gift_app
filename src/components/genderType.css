@@ -1,0 +1,68 @@
+.gender-type-box {
+    display: flex;
+    margin-left: 2%;
+    margin-top:1%;
+}
+.icon-item {
+    width: 50px;
+    height: auto;
+    text-align: center;
+}
+.icon {
+    background-size: 100%;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+}
+.icon-text {
+    font-size: 14px;
+    display: block;
+}
+.icon-text.active {
+    color: red;
+}
+.icon-1 {
+    background-image: url("../images/all.svg");
+}
+.icon-1.active {
+    background-color: red;
+    -webkit-mask:  url(../images/all.svg) no-repeat;
+    mask: url(../images/all.svg) no-repeat;
+    background-image: none;
+}
+.icon-2 {
+    background-image: url("../images/men.svg");
+}
+.icon-2.active {
+    background-color: red;
+    -webkit-mask:  url(../images/men.svg) no-repeat;
+    mask: url(../images/men.svg) no-repeat;
+    background-image: none;
+}
+.icon-3 {
+    background-image: url("../images/women.svg");
+}
+.icon-3.active {
+    background-color: red;
+    -webkit-mask:  url(../images/women.svg) no-repeat;
+    mask: url(../images/women.svg) no-repeat;
+    background-image: none;
+}
+.icon-4 {
+    background-image: url("../images/kid.svg");
+}
+.icon-4.active {
+    background-color: red;
+    -webkit-mask:  url(../images/kid.svg) no-repeat;
+    mask: url(../images/kid.svg) no-repeat;
+    background-image: none;
+}
+.icon-5 {
+    background-image: url("../images/teen.svg");
+}
+.icon-5.active {
+    background-color: red;
+    -webkit-mask:  url(../images/teen.svg) no-repeat;
+    mask: url(../images/teen.svg) no-repeat;
+    background-image: none;
+}

@@ -22,47 +22,47 @@
     color: red;
 }
 .icon-1 {
-    background-image: url("../images/all.svg");
+    background-image: url("https://image.flaticon.com/icons/svg/437/437522.svg");
 }
 .icon-1.active {
     background-color: red;
-    -webkit-mask:  url(../images/all.svg) no-repeat;
-    mask: url(../images/all.svg) no-repeat;
+    -webkit-mask:  url(https://image.flaticon.com/icons/svg/437/437522.svg) no-repeat;
+    mask: url(https://image.flaticon.com/icons/svg/437/437522.svg) no-repeat;
     background-image: none;
 }
 .icon-2 {
-    background-image: url("../images/men.svg");
+    background-image: url("https://image.flaticon.com/icons/svg/912/912316.svg");
 }
 .icon-2.active {
     background-color: red;
-    -webkit-mask:  url(../images/men.svg) no-repeat;
-    mask: url(../images/men.svg) no-repeat;
+    -webkit-mask:  url(https://image.flaticon.com/icons/svg/912/912316.svg) no-repeat;
+    mask: url(https://image.flaticon.com/icons/svg/912/912316.svg) no-repeat;
     background-image: none;
 }
 .icon-3 {
-    background-image: url("../images/women.svg");
+    background-image: url("https://image.flaticon.com/icons/svg/522/522400.svg");
 }
 .icon-3.active {
     background-color: red;
-    -webkit-mask:  url(../images/women.svg) no-repeat;
-    mask: url(../images/women.svg) no-repeat;
+    -webkit-mask:  url(https://image.flaticon.com/icons/svg/522/522400.svg) no-repeat;
+    mask: url(https://image.flaticon.com/icons/svg/522/522400.svg) no-repeat;
     background-image: none;
 }
 .icon-4 {
-    background-image: url("../images/kid.svg");
+    background-image: url("https://image.flaticon.com/icons/svg/941/941515.svg");
 }
 .icon-4.active {
     background-color: red;
-    -webkit-mask:  url(../images/kid.svg) no-repeat;
-    mask: url(../images/kid.svg) no-repeat;
+    -webkit-mask:  url(https://image.flaticon.com/icons/svg/941/941515.svg) no-repeat;
+    mask: url(https://image.flaticon.com/icons/svg/941/941515.svg) no-repeat;
     background-image: none;
 }
 .icon-5 {
-    background-image: url("../images/teen.svg");
+    background-image: url("https://image.flaticon.com/icons/svg/1077/1077982.svg");
 }
 .icon-5.active {
     background-color: red;
-    -webkit-mask:  url(../images/teen.svg) no-repeat;
-    mask: url(../images/teen.svg) no-repeat;
+    -webkit-mask:  url(https://image.flaticon.com/icons/svg/1077/1077982.svg) no-repeat;
+    mask: url(https://image.flaticon.com/icons/svg/1077/1077982.svg) no-repeat;
     background-image: none;
 }

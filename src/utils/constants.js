@@ -3,7 +3,7 @@ export const ReduxActions = {
 }
 
 export const StringConstants = {
-    SIDE_HEADING :"Christmas Gifts",
+    SIDE_HEADING: "Christmas Gifts",
     SELECT_CATEGORY: "SELECT CATEGORY",
     SELECT: "Select",
     ALL: "All",
@@ -14,7 +14,6 @@ export const StringConstants = {
     SET_PRICE: "SET PRICE",
     SEE_MORE: "See more",
     APPAREL: "Apparel"
-
 }
 
 export const DropDownStrings = {

@@ -12,7 +12,7 @@ export default class PriceRangeSlider extends Component {
         }
     }
     rangeFilter = (value) => {
-        this.setState({rangevalue: value});
+        this.setState({ rangevalue: value });
         this.props.rangeFilter(value);
     }
     render() {
@@ -32,11 +32,11 @@ export default class PriceRangeSlider extends Component {
                     onChange={value => this.rangeFilter(value)}
                 />
                 <div className="price-list">
-                    {map(range, (item) =>{
-                        if(item.value <= 1000){
-                            return(<li>{`$ ${item.value}`} </li> );
-                        }else {
-                            return(<li>$ 1000+ </li> );
+                    {map(range, (item) => {
+                        if (item.value <= 1000) {
+                            return (<li>{`$ ${item.value}`} </li>);
+                        } else {
+                            return (<li>$ 1000+ </li>);
                         }
                     })}
                 </div>

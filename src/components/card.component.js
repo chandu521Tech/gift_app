@@ -38,7 +38,7 @@ export default class Card extends Component {
             cards = map(this.props.cardsData, (card) => {
                 {
                     return (
-                        <div id={get(card, JsonKeys.ID)} className="card" onClick={() => window.open(get(card, JsonKeys.LINK), "_blank")} onMouseOver ={(e) => this.openCardDetails(e)}>
+                        <div id={get(card, JsonKeys.ID)} className="card" onClick={() => window.open(get(card, JsonKeys.LINK), "_blank")} onMouseOver={(e) => this.openCardDetails(e)}>
                             <img src={get(card, JsonKeys.PRODUCT_IMAGE)} alt={get(card, JsonKeys.NAME)} />
                             <div className="container">
                                 <p>{get(card, JsonKeys.MARCHANT)}</p>
@@ -52,7 +52,7 @@ export default class Card extends Component {
                 cardDetails = map(this.props.cardsData, (item) => {
                     if (get(item, JsonKeys.ID) === this.state.detailsId) {
                         return (
-                            <div id={get(item, JsonKeys.ID)} style={{top:this.state.offsetTop, left: this.state.offsetLeft}} className="card-details" onClick={() => window.open(get(item, JsonKeys.LINK), "_blank")} onMouseLeave ={(e) => this.closeCardDetails(e)}>
+                            <div id={get(item, JsonKeys.ID)} style={{ top: this.state.offsetTop, left: this.state.offsetLeft }} className="card-details" onClick={() => window.open(get(item, JsonKeys.LINK), "_blank")} onMouseLeave={(e) => this.closeCardDetails(e)}>
                                 <img src={get(item, JsonKeys.PRODUCT_IMAGE)} alt={get(item, JsonKeys.NAME)} />
                                 <div className="details-container">
                                     <p>{get(item, JsonKeys.NAME)}</p>

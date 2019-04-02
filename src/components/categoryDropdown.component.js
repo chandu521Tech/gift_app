@@ -5,22 +5,22 @@ import { DropDownStrings, StringConstants } from '../utils/constants';
 import { saveToStoreAction } from '../redux/actions';
 import './categoryDropdown.css'
 
-export default class CategoryDropDown extends Component{
-    changeCategory = (e) =>{
+export default class CategoryDropDown extends Component {
+    changeCategory = (e) => {
         this.props.categoryFilter(e.target.value);
     }
-    render(){
+    render() {
         const list = map(DropDownStrings.dropdownList, (data) => {
-            return(<option value={data}>{data}</option> )
+            return (<option value={data}>{data}</option>)
         })
-        return(
+        return (
             <div className="category-drop-down">
                 <p>{this.props.text}</p>
-                <select className="select_box" onChange={(e)=>this.changeCategory(e)}> 
+                <select className="select_box" onChange={(e) => this.changeCategory(e)}>
                     <option value={StringConstants.SELECT}>{StringConstants.SELECT}</option>
                     {list}
                 </select>
-           </div>
+            </div>
         );
     };
 }

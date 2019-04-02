@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { get, isNull } from 'lodash';
+import { get, map } from 'lodash';
 import { saveToStoreAction } from '../redux/actions';
 import './main.css'
 import { StringConstants, JsonKeys } from '../utils/constants';
@@ -16,8 +16,8 @@ export default class Main extends Component {
         super(props);
         this.state = {
             Productscard: null,
-            category: null,
-            type: null,
+            category: "Select",
+            type: "all",
             range: "1000"
         };
     }
@@ -25,65 +25,48 @@ export default class Main extends Component {
         this.setState({ Productscard: cardData });
     }
     categoryFilter = (category) => {
-        if (category !== StringConstants.SELECT) {
-            this.setState({ Productscard: cardData, category: category }, () => {
-                let filterData = [];
-                this.state.Productscard.filter((item) => {
-                    if (this.state.category !== null) {
-                        if (get(item, JsonKeys.CATEGORY) === this.state.category) {
-                            filterData.push(item);
-                        }
-                    }
-                });
-                this.setState({ Productscard: filterData });
-            });
-        } else {
-            this.setState({ Productscard: cardData, category: null });
-        }
-        this.ApplyAllTypeFilter();
+        this.setState({ Productscard: cardData, category: category }, () => {
+            this.ApplyAllTypeFilter();
+        });
     }
     typeFilter = (type) => {
-        if (type !== JsonKeys.ALL) {
-            this.setState({ Productscard: cardData, type: type }, () => {
-                let TypeFilter = [];
-                this.state.Productscard.filter((item) => {
-                    if (this.state.type !== null) {
-                        if (get(item, JsonKeys.TYPE) === this.state.type) {
-                            TypeFilter.push(item);
-                        }
-                    }
-                });
-                this.setState({ Productscard: TypeFilter });
-            });
-        } else {
-            this.setState({ Productscard: cardData, type: null });
-        }
-        this.ApplyAllTypeFilter();
+        this.setState({ Productscard: cardData, type: type }, () => {
+            this.ApplyAllTypeFilter();
+        });
     }
     rangeFilter = (range) => {
         this.setState({ Productscard: cardData, range: range }, () => {
-            let RangeFilter = [];
-            this.state.Productscard.filter((item) => {
-                if (get(item, JsonKeys.DISCOUNT_PRICE) <= this.state.range) {
-                    RangeFilter.push(item);
-                }
-            });
-            this.setState({ Productscard: RangeFilter });
+            this.ApplyAllTypeFilter();
         });
-        this.ApplyAllTypeFilter();
     }
     ApplyAllTypeFilter = () => {
-        if (!isNull(this.state.category) && !isNull(this.state.type)) {
-            this.setState({ Productscard: cardData }, () => {
-                let filterData = [];
-                this.state.Productscard.filter((item) => {
-                    if (get(item, JsonKeys.CATEGORY) === this.state.category && get(item, JsonKeys.TYPE) === this.state.type && get(item, JsonKeys.DISCOUNT_PRICE) <= this.state.range) {
-                        filterData.push(item);
-                    }
-                });
-                this.setState({ Productscard: filterData });
+        let filterData = [];
+        if (this.state.category === StringConstants.SELECT && this.state.type === JsonKeys.ALL) {
+            map(cardData, (item) => {
+                if (get(item, JsonKeys.DISCOUNT_PRICE) <= this.state.range) {
+                    filterData.push(item);
+                }
+            });
+        } else if (this.state.category !== StringConstants.SELECT && this.state.type === JsonKeys.ALL) {
+            map(cardData, (item) => {
+                if (get(item, JsonKeys.CATEGORY) === this.state.category && get(item, JsonKeys.DISCOUNT_PRICE) <= this.state.range) {
+                    filterData.push(item);
+                }
+            });
+        } else if (this.state.category === StringConstants.SELECT && this.state.type !== JsonKeys.ALL) {
+            map(cardData, (item) => {
+                if (get(item, JsonKeys.TYPE) === this.state.type && get(item, JsonKeys.DISCOUNT_PRICE) <= this.state.range) {
+                    filterData.push(item);
+                }
+            });
+        } else if (this.state.category !== StringConstants.SELECT && this.state.type !== JsonKeys.ALL) {
+            map(cardData, (item) => {
+                if (get(item, JsonKeys.CATEGORY) === this.state.category && get(item, JsonKeys.TYPE) === this.state.type && get(item, JsonKeys.DISCOUNT_PRICE) <= this.state.range) {
+                    filterData.push(item);
+                }
             });
         }
+        this.setState({ Productscard: filterData });
     }
     render() {
         return (

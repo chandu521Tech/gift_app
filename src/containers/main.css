@@ -20,6 +20,17 @@
     width: 80%;
     margin: auto;
 }
+@media screen and (max-width: 992px) {
+    .header-container{
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .header-container{
+        display: block;
+    }
+}
 .side-header h2 {
     font-style: italic;
     font-weight: inherit;
